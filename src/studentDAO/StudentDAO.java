@@ -113,8 +113,8 @@ public class StudentDAO {
             callstm = conn.prepareCall("{call find_student_by_id(?)}");
            callstm.setInt(1,id);
            ResultSet rs = callstm.executeQuery();
-           student = new Student();
            while (rs.next()){
+               student = new Student();
                student.setId(rs.getInt("student_id"));
                student.setName(rs.getString("full_name"));
                student.setEmail(rs.getString("email"));
